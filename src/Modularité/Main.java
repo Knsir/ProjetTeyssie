@@ -1,4 +1,5 @@
 package Modularité;
+import ServeurTCP.ServeurTCP;
 import Serveur_UDP.Serveur_UDP;
 import java.util.Scanner;
 
@@ -12,6 +13,11 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             String clav=scanner.nextLine();
             switch(clav){
+                case "1":
+                    System.out.println("Le lanceur TCP est lancé");
+                    ServeurTCP s = new ServeurTCP(28414);
+                    s.travail();
+                    break;
                 case "2":
                     System.out.println("Le lanceur UDP est lancé");
                     Serveur_UDP srv = new Serveur_UDP(28414);
