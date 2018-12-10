@@ -8,7 +8,7 @@ import java.io.PrintStream;
 /**
  * Created by Karim on 21/11/2018.
  */
-public class GererProto {
+public class GererProto extends Thread{
 
     private ListeAuth l;
     private String chaine;
@@ -22,6 +22,7 @@ public class GererProto {
         this.l = l;
         this.chaine = chaine;
     }
+
 
     public String travail(String Req) {
         String reponse = "ERROR : souci inconnu";

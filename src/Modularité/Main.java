@@ -1,4 +1,7 @@
 package Modularité;
+import Multiprotocole.CheckerTCP;
+import Multiprotocole.ServeurTCPMulti;
+import Multiprotocole.SrvMultiUDP;
 import ServeurTCP.ServeurTCP;
 import Serveur_UDP.Serveur_UDP;
 import java.util.Scanner;
@@ -23,6 +26,16 @@ public class Main {
                     Serveur_UDP srv = new Serveur_UDP(28414);
                     srv.work();
                     break;
+                case "3":
+                    System.out.println("Le thread");
+                    SrvMultiUDP srver = new SrvMultiUDP(28414);
+                    ServeurTCPMulti srvTCP=new ServeurTCPMulti(28415);
+                    srver.run();
+                    srvTCP.run();
+                    //srvTCP.travail();
+                    //srver.work();
+                    break;
+
                 default:
                     System.out.println("Erreur de Frappe");
                     break;
