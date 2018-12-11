@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Main {
         public static void main(String[]args){
             System.out.println("Lancement du Serveur");
-            System.out.println("Tapez 1 pour lancer un Serveur TCP | Tapez 2 pour lancer un Serveur UDP");
+            System.out.println("Tapez 1 pour lancer un Serveur TCP | Tapez 2 pour lancer un Serveur UDP|Tapez 3 pour lancer les deux serveurs à la fois");
             Scanner scanner = new Scanner(System.in);
             String clav=scanner.nextLine();
             switch(clav){
@@ -30,12 +30,9 @@ public class Main {
                     System.out.println("Le thread");
                     SrvMultiUDP srver = new SrvMultiUDP(28414);
                     ServeurTCPMulti srvTCP=new ServeurTCPMulti(28415);
-                    srver.run();
-                    srvTCP.run();
-                    //srvTCP.travail();
-                    //srver.work();
+                    srver.start();
+                    srvTCP.start();
                     break;
-
                 default:
                     System.out.println("Erreur de Frappe");
                     break;
