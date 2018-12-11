@@ -13,7 +13,6 @@ public class ClientTCP {
 	public static void main(String[] args) throws Exception {
 		// Création d'un socket client et connexion avec un serveur fonctionnant sur la même machine et sur le port 40000
 		Socket sc = new Socket("localhost", 28414);
-		System.out.println("test");
 		
 		// Construction d'un BufferedReader pour lire du texte envoyé à travers la connexion socket
 		BufferedReader entreeSocket = new BufferedReader(new InputStreamReader(sc.getInputStream()));

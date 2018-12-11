@@ -31,8 +31,8 @@ public class ServeurTCPMulti extends Thread{
 
             ListeAuth l=new ListeAuth();
             //Gestion du client
-            Gerer1Client t_gc = new Gerer1Client(l,ss);
-            t_gc.travail();
+            Gerer1Client gc = new Gerer1Client(l,ss);
+            gc.travail();
             //Fermeture Socket
             ssg.close();
         }

@@ -12,7 +12,7 @@ import java.net.Socket;
 /**
  * Created by Karim on 21/11/2018.
  */
-public class Gerer1Client extends Thread{
+public class Gerer1Client{
 
     private ListeAuth liste;
     private Socket ss;

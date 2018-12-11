@@ -1,6 +1,5 @@
 package Multiprotocole;
 
-//import Serveur.Gerer1Client;
 
 import Serveur.ListeAuth;
 import Serveur_UDP.GererClientUDP;
@@ -27,8 +26,8 @@ public class SrvMultiUDP extends Thread{
         try  {
             DatagramSocket socket = new DatagramSocket(port);
             final byte[] tampon=new byte[1024];
-            GererClientMultiUDP t_gc=new GererClientMultiUDP(tampon,socket);
-            t_gc.travail();
+            GererClientUDP gc=new GererClientUDP(tampon,socket);
+            gc.travail();
         }
         catch (IOException e){
             System.out.println("Exception");

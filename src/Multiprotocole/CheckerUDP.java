@@ -10,8 +10,13 @@ import java.util.Scanner;
  */
 
 public class CheckerUDP {
+    private int port;
 
-        public static void main(String[] args) throws Exception {
+    public CheckerUDP(int port) {
+        this.port = port;
+    }
+
+    public  void clientudp() throws Exception {
             // Création d'un socket UDP sur un port choisi par le système
             DatagramSocket socket = new DatagramSocket();
 
@@ -36,7 +41,7 @@ public class CheckerUDP {
                 // on récupère un tableau des octets de la chaîne
                 byte [] octetsChaine = chaine.getBytes();
                 // objet Java permettant d'envoyer un datagramme UDP vers la machine destination et le port 40000
-                DatagramPacket emission = new DatagramPacket(octetsChaine, octetsChaine.length, destination, 28414);
+                DatagramPacket emission = new DatagramPacket(octetsChaine, octetsChaine.length, destination, port);
 
                 // on envoie le datagramme UDP
                 socket.send(emission);

@@ -8,7 +8,7 @@ import java.io.PrintStream;
 /**
  * Created by Karim on 21/11/2018.
  */
-public class GererProto extends Thread{
+public class GererProto {
 
     private ListeAuth l;
     private String chaine;
@@ -29,10 +29,9 @@ public class GererProto extends Thread{
         // decoupage
         //chaine=Req;
             if (chaine != null) {
+                System.out.println("Chaine reçue:" +chaine);
                 String tab[] = chaine.split(" ");
                 reponse = "BAD";
-                System.out.println(tab[0]);
-                System.out.println(tab.length);
                 if (tab.length == 3) {
                     switch (tab[0]){
                         case "chk":

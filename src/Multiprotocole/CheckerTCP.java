@@ -7,10 +7,14 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class CheckerTCP {
-	public static void main(String[] args) throws Exception {
+	private int port;
+	public CheckerTCP(int port) {
+		this.port=port;
+	}
+
+	public  void client() throws Exception {
 		// Création d'un socket client et connexion avec un serveur fonctionnant sur la même machine et sur le port 40000
-		Socket sc = new Socket("localhost", 28415);
-		System.out.println("test");
+		Socket sc = new Socket("localhost", port);
 		
 		// Construction d'un BufferedReader pour lire du texte envoyé à travers la connexion socket
 		BufferedReader entreeSocket = new BufferedReader(new InputStreamReader(sc.getInputStream()));
